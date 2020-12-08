@@ -1,0 +1,5 @@
+entity.ever_entity.add_form:
+  route_name: entity.ever_entity.add_form
+  title: 'Add Ever entity'
+  appears_on:
+    - entity.ever_entity.collection

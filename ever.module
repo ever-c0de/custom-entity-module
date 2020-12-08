@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains ever.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ever_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ever module.
+    case 'help.page.ever':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My first module that using Entity API') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ever_theme() {
+  return [
+    'ever' => [
+      'render element' => 'children',
+    ],
+  ];
+}

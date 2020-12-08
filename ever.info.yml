@@ -1,0 +1,5 @@
+name: 'ever'
+type: module
+description: 'My first module that using Entity API'
+core: 8.x
+package: 'Custom'

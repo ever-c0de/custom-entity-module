@@ -1,0 +1,20 @@
+add ever entity entities:
+  title: 'Create new Ever entity entities'
+
+administer ever entity entities:
+  title: 'Administer Ever entity entities'
+  description: 'Allow to access the administration form to configure Ever entity entities.'
+  restrict access: true
+
+delete ever entity entities:
+  title: 'Delete Ever entity entities'
+
+edit ever entity entities:
+  title: 'Edit Ever entity entities'
+
+view published ever entity entities:
+  title: 'View published Ever entity entities'
+
+view unpublished ever entity entities:
+  title: 'View unpublished Ever entity entities'
+
