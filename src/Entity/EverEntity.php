@@ -147,12 +147,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
-            'label' => 'above',
-            'type' => 'string',
+            'type' => 'telephone_default',
             'weight' => -4,
           ])
           ->setDisplayOptions('form', [
-            'type' => 'string_textfield',
+            'type' => 'telephone_default',
             'weight' => -4,
           ])
           ->setDisplayConfigurable('form', TRUE)
@@ -165,6 +164,46 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setSettings([
             'max_length' => 500,
             'text_processing' => 0,
+          ])
+          ->setDefaultValue('')
+          ->setDisplayOptions('view', [
+            'label' => 'above',
+            'type' => 'string',
+            'weight' => -4,
+          ])
+          ->setDisplayOptions('form', [
+            'type' => 'string_textfield',
+            'weight' => -4,
+          ])
+          ->setDisplayConfigurable('form', TRUE)
+          ->setDisplayConfigurable('view', TRUE)
+          ->setRequired(TRUE);
+
+    $fields['image_avatar'] = BaseFieldDefinition::create('image')
+          ->setLabel(t('Avatar'))
+          ->setDescription(t('The avatar image of the Ever entity entity.'))
+          ->setSettings([
+            'default_value' => '',
+          ])
+          ->setDefaultValue('')
+          ->setDisplayOptions('view', [
+            'label' => 'above',
+            'type' => 'string',
+            'weight' => -4,
+          ])
+          ->setDisplayOptions('form', [
+            'type' => 'string_textfield',
+            'weight' => -4,
+          ])
+          ->setDisplayConfigurable('form', TRUE)
+          ->setDisplayConfigurable('view', TRUE)
+          ->setRequired(TRUE);
+
+    $fields['image_photo'] = BaseFieldDefinition::create('image')
+          ->setLabel(t('Photo'))
+          ->setDescription(t('The photo image of the Ever entity entity.'))
+          ->setSettings([
+
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
