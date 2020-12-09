@@ -138,6 +138,48 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
+    $fields['telephone'] = BaseFieldDefinition::create('telephone')
+          ->setLabel(t('Phone number'))
+          ->setDescription(t('The telephone of the Ever entity entity.'))
+          ->setSettings([
+            'max_length' => 15,
+            'text_processing' => 0,
+          ])
+          ->setDefaultValue('')
+          ->setDisplayOptions('view', [
+            'label' => 'above',
+            'type' => 'string',
+            'weight' => -4,
+          ])
+          ->setDisplayOptions('form', [
+            'type' => 'string_textfield',
+            'weight' => -4,
+          ])
+          ->setDisplayConfigurable('form', TRUE)
+          ->setDisplayConfigurable('view', TRUE)
+          ->setRequired(TRUE);
+
+    $fields['comment'] = BaseFieldDefinition::create('string_long')
+          ->setLabel(t('Comment'))
+          ->setDescription(t('The comment of the Ever entity entity.'))
+          ->setSettings([
+            'max_length' => 500,
+            'text_processing' => 0,
+          ])
+          ->setDefaultValue('')
+          ->setDisplayOptions('view', [
+            'label' => 'above',
+            'type' => 'string',
+            'weight' => -4,
+          ])
+          ->setDisplayOptions('form', [
+            'type' => 'string_textfield',
+            'weight' => -4,
+          ])
+          ->setDisplayConfigurable('form', TRUE)
+          ->setDisplayConfigurable('view', TRUE)
+          ->setRequired(TRUE);
+
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
