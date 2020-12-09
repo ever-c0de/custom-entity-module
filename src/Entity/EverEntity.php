@@ -7,6 +7,7 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\file\Entity\File;
 
 /**
  * Defines the Ever entity entity.
@@ -102,7 +103,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setSettings([
         'max_length' => 100,
         'min_length' => 2,
-        'text_processing' => 0,
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
@@ -122,7 +122,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setDescription(t('The email of the Ever entity entity.'))
       ->setSettings([
         'max_length' => 50,
-        'text_processing' => 0,
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
@@ -143,7 +142,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setDescription(t('The telephone of the Ever entity entity.'))
           ->setSettings([
             'max_length' => 15,
-            'text_processing' => 0,
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
@@ -163,7 +161,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setDescription(t('The comment of the Ever entity entity.'))
           ->setSettings([
             'max_length' => 500,
-            'text_processing' => 0,
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
@@ -183,8 +180,19 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setLabel(t('Avatar'))
           ->setDescription(t('The avatar image of the Ever entity entity.'))
           ->setSettings([
-            'default_value' => '',
+
+            'file_extensions' => 'png jpg jpeg',
+            'alt_field' => 0,
+            'alt_field_required' => 0,
+            'default_image' => [
+              'uuid' => NULL,
+              'alt' => '',
+              'title' => '',
+              'width' => NULL,
+              'height' => NULL,
+            ],
           ])
+      // @todo: default value
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
             'label' => 'above',
@@ -197,13 +205,22 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(TRUE);
+          ->setRequired(FALSE);
 
     $fields['image_photo'] = BaseFieldDefinition::create('image')
           ->setLabel(t('Photo'))
           ->setDescription(t('The photo image of the Ever entity entity.'))
           ->setSettings([
-
+            'file_extensions' => 'png jpg jpeg',
+            'alt_field' => 0,
+            'alt_field_required' => 0,
+            'default_image' => [
+              'uuid' => NULL,
+              'alt' => '',
+              'title' => '',
+              'width' => NULL,
+              'height' => NULL,
+              ],
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
@@ -217,7 +234,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(TRUE);
+          ->setRequired(FALSE);
 
 
     $fields['created'] = BaseFieldDefinition::create('created')

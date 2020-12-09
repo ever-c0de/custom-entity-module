@@ -1,0 +1,7 @@
+ever.form:
+  path: '/module-page'
+  defaults:
+    _form:  '\Drupal\ever\Form\EverEntityForm'
+    _title: 'Ever Module'
+  requirements:
+    _permission: 'access content'
