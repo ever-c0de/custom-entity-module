@@ -96,6 +96,8 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
 
     // Add the published field.
     $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load(1);
+    $entity->
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
