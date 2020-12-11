@@ -180,7 +180,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setLabel(t('Avatar'))
           ->setDescription(t('The avatar image of the Ever entity entity.'))
           ->setSettings([
-
             'file_extensions' => 'png jpg jpeg',
             'alt_field' => 0,
             'alt_field_required' => 0,
