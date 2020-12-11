@@ -88,16 +88,24 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
     return $this;
   }
 
+
+
+  /**
+   * {@inheritdoc}
+   */
+
+
+
   /**
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+
     $fields = parent::baseFieldDefinitions($entity_type);
 
     // Add the published field.
     $fields += static::publishedBaseFieldDefinitions($entity_type);
-    $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load(1);
-    $entity->
+
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
@@ -178,6 +186,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setDisplayConfigurable('view', TRUE)
           ->setRequired(TRUE);
 
+
     $fields['image_avatar'] = BaseFieldDefinition::create('image')
           ->setLabel(t('Avatar'))
           ->setDescription(t('The avatar image of the Ever entity entity.'))
@@ -186,11 +195,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
             'alt_field' => 0,
             'alt_field_required' => 0,
             'default_image' => [
-              'uuid' => NULL,
-              'alt' => '',
-              'title' => '',
-              'width' => NULL,
-              'height' => NULL,
+              'uuid' => '',
+              'alt' => 'Default image',
+              'title' => 'Default image',
+              'width' => '150px',
+              'height' => '150px',
             ],
           ])
       // @todo: default value
