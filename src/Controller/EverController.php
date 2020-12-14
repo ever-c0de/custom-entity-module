@@ -10,9 +10,10 @@ class EverController {
     $image = File::create();
     $destination = 'modules/custom/ever/default/default_user.png';
     $image->setFileUri($destination);
-  $image->setOwnerId(\Drupal::currentUser()->id());
-  $image->setPermanent();
-  $image->save();
-  return $image->uuid();
+    $image->setOwnerId(\Drupal::currentUser()->id());
+    $image->setFileName($filesystem->basename($destination));
+    $image->setPermanent();
+    $image->save();
+    return $image->uuid();
 }
 }

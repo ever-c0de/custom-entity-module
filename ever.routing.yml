@@ -1,7 +1,7 @@
 ever.form:
   path: '/module-page'
   defaults:
-    _contoller: '\Drupal\ever\Controller\EverController::getDefaultImage'
+    _controller: '\Drupal\ever\Controller\EverController::getDefaultImage'
     _title: 'Ever Module'
   requirements:
     _permission: 'access content'

@@ -2,6 +2,7 @@
 
 namespace Drupal\ever\Entity;
 
+use Drupal\ever\Controller\EverController;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
@@ -195,11 +196,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
             'alt_field' => 0,
             'alt_field_required' => 0,
             'default_image' => [
-              'uuid' => '',
+              'uuid' => EverController::getDefaultImage(),
               'alt' => 'Default image',
               'title' => 'Default image',
-              'width' => '150px',
-              'height' => '150px',
+              'width' => 128,
+              'height' => 128,
             ],
           ])
       // @todo: default value
