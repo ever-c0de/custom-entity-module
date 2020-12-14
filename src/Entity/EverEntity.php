@@ -148,7 +148,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-    $fields['telephone'] = BaseFieldDefinition::create('telephone')
+    $fields['telephone'] = BaseFieldDefinition::create('string')
           ->setLabel(t('Phone number'))
           ->setDescription(t('The telephone of the Ever entity entity.'))
           ->setSettings([
@@ -156,11 +156,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
-            'type' => 'telephone_default',
+            'type' => 'string',
             'weight' => -4,
           ])
           ->setDisplayOptions('form', [
-            'type' => 'telephone_default',
+            'type' => 'string_textfield',
             'weight' => -4,
           ])
           ->setDisplayConfigurable('form', TRUE)
@@ -192,22 +192,22 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setLabel(t('Avatar'))
           ->setDescription(t('The avatar image of the Ever entity entity.'))
           ->setSettings([
+            'file_directory' => 'ever/avatars',
             'file_extensions' => 'png jpg jpeg',
             'alt_field' => 0,
             'alt_field_required' => 0,
             'default_image' => [
+              'image_style' => NULL,
               'uuid' => EverController::getDefaultImage(),
               'alt' => 'Default image',
               'title' => 'Default image',
-              'width' => 100,
-              'height' => 100,
+              'width' => NULL,
+              'height' => NULL,
             ],
           ])
-      // @todo: default value
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
             'label' => 'above',
-            'type' => 'image',
             'weight' => -4,
           ])
           ->setDisplayOptions('form', [
@@ -222,6 +222,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setLabel(t('Photo'))
           ->setDescription(t('The photo image of the Ever entity entity.'))
           ->setSettings([
+            'file_directory' => 'ever/photos',
             'file_extensions' => 'png jpg jpeg',
             'alt_field' => 0,
             'alt_field_required' => 0,
