@@ -199,19 +199,19 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
               'uuid' => EverController::getDefaultImage(),
               'alt' => 'Default image',
               'title' => 'Default image',
-              'width' => 128,
-              'height' => 128,
+              'width' => 100,
+              'height' => 100,
             ],
           ])
       // @todo: default value
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
             'label' => 'above',
-            'type' => 'string',
+            'type' => 'image',
             'weight' => -4,
           ])
           ->setDisplayOptions('form', [
-            'type' => 'string_textfield',
+            'type' => 'image_image',
             'weight' => -4,
           ])
           ->setDisplayConfigurable('form', TRUE)

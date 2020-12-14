@@ -11,6 +11,7 @@ class EverController {
     $destination = 'modules/custom/ever/default/default_user.png';
     $image->setFileUri($destination);
     $image->setOwnerId(\Drupal::currentUser()->id());
+    $image->setMimeType('image/' . pathinfo($destination, PATHINFO_EXTENSION));
     $image->setFileName($filesystem->basename($destination));
     $image->setPermanent();
     $image->save();
