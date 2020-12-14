@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace Drupal\ever\Plugin\Constraint;
 
 use Drupal;
@@ -17,4 +17,4 @@ class EmailValidator extends ConstraintValidator {
     }
   }
 
-}
+}*/

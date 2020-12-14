@@ -119,11 +119,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => 0,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -4,
+        'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -138,11 +138,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => 1,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -4,
+        'weight' => 1,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -157,11 +157,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
             'type' => 'string',
-            'weight' => -4,
+            'weight' => 2,
           ])
           ->setDisplayOptions('form', [
             'type' => 'string_textfield',
-            'weight' => -4,
+            'weight' => 2,
           ])
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
@@ -177,11 +177,11 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setDisplayOptions('view', [
             'label' => 'above',
             'type' => 'string',
-            'weight' => -4,
+            'weight' => 3,
           ])
           ->setDisplayOptions('form', [
             'type' => 'string_textfield',
-            'weight' => -4,
+            'weight' => 3,
           ])
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
@@ -197,7 +197,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
             'alt_field' => 0,
             'alt_field_required' => 0,
             'default_image' => [
-              'image_style' => NULL,
               'uuid' => EverController::getDefaultImage(),
               'alt' => 'Default image',
               'title' => 'Default image',
@@ -207,12 +206,13 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
-            'label' => 'above',
-            'weight' => -4,
+            'label' => '',
+            'type' => 'image',
+            'weight' => 4,
           ])
           ->setDisplayOptions('form', [
             'type' => 'image_image',
-            'weight' => -4,
+            'weight' => 4,
           ])
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
@@ -226,23 +226,16 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
             'file_extensions' => 'png jpg jpeg',
             'alt_field' => 0,
             'alt_field_required' => 0,
-            'default_image' => [
-              'uuid' => NULL,
-              'alt' => '',
-              'title' => '',
-              'width' => NULL,
-              'height' => NULL,
-              ],
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
-            'label' => 'above',
-            'type' => 'string',
-            'weight' => -4,
+            'label' => '',
+            'type' => 'image',
+            'weight' => 5,
           ])
           ->setDisplayOptions('form', [
-            'type' => 'string_textfield',
-            'weight' => -4,
+            'type' => 'image_image',
+            'weight' => 5,
           ])
           ->setDisplayConfigurable('form', TRUE)
           ->setDisplayConfigurable('view', TRUE)
