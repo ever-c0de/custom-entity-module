@@ -3,12 +3,13 @@
 namespace Drupal\ever\Controller;
 
 use Drupal\file\Entity\File;
+use Drupal\Core\File\FileSystemInterface;
 
 class EverController {
   public static function getDefaultImage() {
     $filesystem = \Drupal::service('file_system');
     $image = File::create();
-    $destination = "default_images/default_user.png";
+    $destination = "modules/custom/ever/default_image/default_user.png";
     $image->setFileUri($destination);
     $image->setOwnerId(\Drupal::currentUser()->id());
     $image->setMimeType('image/' . pathinfo($destination, PATHINFO_EXTENSION));

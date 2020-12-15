@@ -89,8 +89,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
     return $this;
   }
 
-
-
   /**
    * {@inheritdoc}
    */
@@ -204,7 +202,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
               'height' => NULL,
             ],
           ])
-          ->setDefaultValue('')
+          ->setDefaultValue('default_image')
           ->setDisplayOptions('view', [
             'label' => '',
             'type' => 'image',
