@@ -8,17 +8,14 @@ use Symfony\Component\Validator\Constraint;
  * Checks that the submitted value is a unique integer.
  *
  * @Constraint(
- *   id = "UniqueInteger",
- *   label = @Translation("Unique Integer", context = "Validation"),
+ *   id = "EmailConstraint",
+ *   label = @Translation("Email Constraint", context = "Validation"),
  *   type = "string"
  * )
  */
 class EmailConstraint extends Constraint {
 
   // The message that will be shown if the value is not an integer.
-  public $notInteger = '%value is not an integer';
-
-  // The message that will be shown if the value is not unique.
-  public $notUnique = '%value is not unique';
+  public $invalidEmail = '%value email is not valid';
 
 }
