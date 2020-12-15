@@ -108,6 +108,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
+      ->addConstraint('NameConstraint')
       ->setDescription(t('The name of the Ever entity entity.'))
       ->setSettings([
         'max_length' => 100,
@@ -128,6 +129,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setRequired(TRUE);
     $fields['email'] = BaseFieldDefinition::create('email')
       ->setLabel(t('Email'))
+      ->addConstraint('EmailConstraint')
       ->setDescription(t('The email of the Ever entity entity.'))
       ->setSettings([
         'max_length' => 50,
@@ -147,23 +149,24 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setRequired(TRUE);
 
     $fields['telephone'] = BaseFieldDefinition::create('string')
-          ->setLabel(t('Phone number'))
-          ->setDescription(t('The telephone of the Ever entity entity.'))
-          ->setSettings([
-            'max_length' => 15,
-          ])
-          ->setDefaultValue('')
-          ->setDisplayOptions('view', [
-            'type' => 'string',
-            'weight' => 2,
-          ])
-          ->setDisplayOptions('form', [
-            'type' => 'string_textfield',
-            'weight' => 2,
-          ])
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(TRUE);
+      ->setLabel(t('Phone number'))
+      ->addConstraint('PhoneConstraint')
+      ->setDescription(t('The telephone of the Ever entity entity.'))
+      ->setSettings([
+        'max_length' => 15,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'type' => 'string',
+        'weight' => 2,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 2,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
     $fields['comment'] = BaseFieldDefinition::create('string_long')
           ->setLabel(t('Comment'))
