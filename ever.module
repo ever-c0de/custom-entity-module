@@ -26,10 +26,10 @@ function ever_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function ever_theme() {
+function ever_theme($existing, $type, $theme, $path) {
   return [
     'ever' => [
-      'render element' => 'children',
+      'render element' => 'form',
     ],
   ];
 }
