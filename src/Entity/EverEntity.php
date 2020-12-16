@@ -235,22 +235,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setDisplayConfigurable('view', TRUE)
           ->setRequired(FALSE);
 
-/*    $fields['system_messages'] = [
-      '#markup' => '<div id="form-system-messages"></div>',
-      '#weight' => -100,
-    ];
-    $fields['actions']['submit'] = [
-      '#type' => 'submit',
-      '#value' => t('Submit'),
-      '#button_type' => 'primary',
-      '#ajax' => [
-        'callback' => '::ajaxSubmitCallback',
-        'event' => 'click',
-        'progress' => [
-          'type' => 'throbber',
-        ],
-      ],
-    ];*/
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));

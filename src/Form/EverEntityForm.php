@@ -41,11 +41,23 @@ class EverEntityForm extends ContentEntityForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     /* @var \Drupal\ever\Entity\EverEntity $entity */
     $form = parent::buildForm($form, $form_state);
+    $form['actions']['submit']['#value'] = $this->t('Submit');
+    $form['actions']['submit']['#ajax'] = [
+        'callback' => '::ajaxSubmitCallback',
+        'event' => 'click',
+        'progress' => [
+          'type' => 'throbber',
+        ],
+    ];
 
+    $form['system_messages'] = [
+      '#markup' => '<div id="form-system-messages"></div>',
+      '#weight' => -100,
+    ];
     return $form;
   }
 
-/*  public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
+  public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
     $errors = $form_state->getErrors();
     $ajax_response = new AjaxResponse();
 
@@ -65,11 +77,12 @@ class EverEntityForm extends ContentEntityForm {
           'warning' => t('Warning message'),
         ],
       ];
+      Drupal::messenger()->deleteAll();
       $messages = Drupal::service('renderer')->render($message);
       $ajax_response->addCommand(new HtmlCommand('#form-system-messages', $messages));
     }
     return $ajax_response;
-  }*/
+  }
 
   /**
    * {@inheritdoc}
