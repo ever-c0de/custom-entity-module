@@ -43,11 +43,11 @@ class EverEntityForm extends ContentEntityForm {
     $form = parent::buildForm($form, $form_state);
     $form['actions']['submit']['#value'] = $this->t('Submit');
     $form['actions']['submit']['#ajax'] = [
-        'callback' => '::ajaxSubmitCallback',
-        'event' => 'click',
-        'progress' => [
-          'type' => 'throbber',
-        ],
+      'callback' => '::ajaxSubmitCallback',
+      'event' => 'click',
+      'progress' => [
+        'type' => 'throbber',
+      ],
     ];
 
     $form['system_messages'] = [

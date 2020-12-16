@@ -33,12 +33,3 @@ function ever_theme() {
     ],
   ];
 }
-/**
- * Implements template_preprocess_HOOK().
- * Обработчик переменных для первого примера.
- */
-function template_preprocess_ever(&$variables) {
-  $date_formatter = \Drupal::service('date.formatter');
-  $variables['date'] = $date_formatter->format(time());
-}
-
