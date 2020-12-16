@@ -2,8 +2,13 @@
 
 namespace Drupal\ever\Form;
 
+use Drupal;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -39,6 +44,32 @@ class EverEntityForm extends ContentEntityForm {
 
     return $form;
   }
+
+/*  public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
+    $errors = $form_state->getErrors();
+    $ajax_response = new AjaxResponse();
+
+    if (count($errors) === 0) {
+      Drupal::messenger()->deleteByType('error');
+      $url = Url::fromRoute('ever.form');
+      $command = new RedirectCommand($url->toString());
+      $ajax_response->addCommand($command);
+    }
+    else {
+      $message = [
+        '#theme' => 'status_messages',
+        '#message_list' => Drupal::messenger()->all(),
+        '#status_headings' => [
+          'status' => t('Status message'),
+          'error' => t('Error message'),
+          'warning' => t('Warning message'),
+        ],
+      ];
+      $messages = Drupal::service('renderer')->render($message);
+      $ajax_response->addCommand(new HtmlCommand('#form-system-messages', $messages));
+    }
+    return $ajax_response;
+  }*/
 
   /**
    * {@inheritdoc}

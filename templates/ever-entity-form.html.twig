@@ -6,10 +6,10 @@
   <h2>Give your feedback about us!</h2>
   <div class="form__inner">
     <div class="information__fields">
-    <div class="form_name">{{ form.name }}</div>
-      <div class="form_email">{{ form.email }}</div>
-      <div class="form_telephone">{{ form.telephone }}</div>
-    <div class="form_comment">{{ form.comment }}</div>
+    <div class="form_name">{{ form.name|e }}</div>
+      <div class="form_email">{{ form.email|e }}</div>
+      <div class="form_telephone">{{ form.telephone|e }}</div>
+    <div class="form_comment">{{ form.comment|e }}</div>
     </div>
     <div class="upload__fields">
       {{ form.image_avatar }}

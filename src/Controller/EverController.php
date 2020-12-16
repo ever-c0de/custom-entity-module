@@ -20,12 +20,5 @@ class EverController {
       ->add($image, 'ever', 'entity', $image->id());
     return $image->uuid();
 }
-  public function getForm() {
-    return \Drupal::formBuilder()->getForm('ever_entity');
-  }
-
-  public function getPosts() {
-    return \Drupal::entityTypeManager()->getStorage('ever_entity')->loadMultiple();
-  }
 
 }

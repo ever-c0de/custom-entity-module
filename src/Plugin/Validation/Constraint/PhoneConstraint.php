@@ -16,6 +16,6 @@ use Symfony\Component\Validator\Constraint;
 class PhoneConstraint extends Constraint {
 
   // The message that will be shown if the value is not an integer.
-  public $notValid = '%value is not valid';
+  public $notValid = 'Phone %value is not valid.';
 
 }
