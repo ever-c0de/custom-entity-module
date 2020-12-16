@@ -15,7 +15,7 @@ class TestController
     ];
   }
   public function getForm() {
-    $a = \Drupal::entityTypeManager()->getFormObject('ever_entity', 'default');
+    $a =  \Drupal::entityTypeManager()->getStorage('ever_entity');
     return var_dump($a);
   }
 

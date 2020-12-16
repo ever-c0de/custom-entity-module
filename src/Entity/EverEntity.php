@@ -8,7 +8,6 @@ use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\file\Entity\File;
 
 /**
  * Defines the Ever entity entity.
@@ -92,12 +91,6 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
   /**
    * {@inheritdoc}
    */
-
-
-
-  /**
-   * {@inheritdoc}
-   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
 
     $fields = parent::baseFieldDefinitions($entity_type);
@@ -151,9 +144,9 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
     $fields['telephone'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Phone number'))
       ->addConstraint('PhoneConstraint')
-      ->setDescription(t('The telephone of the Ever entity entity.'))
+      ->setDescription(t('Phone number must accord this format: +38(XXX)XXX-XX-XX.'))
       ->setSettings([
-        'max_length' => 15,
+        'max_length' => 17,
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
@@ -170,7 +163,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
 
     $fields['comment'] = BaseFieldDefinition::create('string_long')
           ->setLabel(t('Comment'))
-          ->setDescription(t('The comment of the Ever entity entity.'))
+          ->setDescription(t('Your comment needs to be not longer than 500 characters.'))
           ->setSettings([
             'max_length' => 500,
           ])
@@ -191,7 +184,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
 
     $fields['image_avatar'] = BaseFieldDefinition::create('image')
           ->setLabel(t('Avatar'))
-          ->setDescription(t('The avatar image of the Ever entity entity.'))
+          ->setDescription(t('Allowed extensions: png jpg jpeg'))
           ->setSettings([
             'file_directory' => 'ever/avatars',
             'file_extensions' => 'png jpg jpeg',
@@ -221,7 +214,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
 
     $fields['image_photo'] = BaseFieldDefinition::create('image')
           ->setLabel(t('Photo'))
-          ->setDescription(t('The photo image of the Ever entity entity.'))
+          ->setDescription(t('Allowed extensions: png jpg jpeg'))
           ->setSettings([
             'file_directory' => 'ever/photos',
             'file_extensions' => 'png jpg jpeg',
