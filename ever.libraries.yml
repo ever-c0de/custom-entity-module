@@ -1,0 +1,5 @@
+ever_entity_form.css:
+  version: 1.x
+  css:
+    theme:
+      styles/css/styles.css: {}

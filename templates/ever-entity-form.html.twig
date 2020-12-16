@@ -1,0 +1,19 @@
+{{ attach_library('ever/ever') }}
+<div class="form">
+  <h2>Give your feedback about us!</h2>
+  <div class="form__inner">
+    <div class="information__fields">
+    <div class="form_name">{{ form.name }}</div>
+      <div class="form_email">{{ form.email }}</div>
+      <div class="form_telephone">{{ form.telephone }}</div>
+    <div class="form_comment">{{ form.comment }}</div>
+    </div>
+    <div class="upload__fields">
+      {{ form.image_avatar }}
+      {{ form.image_photo }}
+    </div>
+    <div class="form__submit">
+      {{ form.actions }}
+    </div>
+  </div>
+</div>

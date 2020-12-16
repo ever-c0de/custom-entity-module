@@ -9,3 +9,10 @@ ever.form:
         type: ever_entity
   requirements:
     _permission: 'access content'
+ever.my:
+  path: '/test'
+  defaults:
+    _controller: '\Drupal\ever\Controller\TestController::getForm'
+    _title: 'Theme'
+  requirements:
+    _permission: 'access content'

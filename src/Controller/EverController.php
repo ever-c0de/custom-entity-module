@@ -3,9 +3,9 @@
 namespace Drupal\ever\Controller;
 
 use Drupal\file\Entity\File;
-use Drupal\Core\File\FileSystemInterface;
 
 class EverController {
+
   public static function getDefaultImage() {
     $filesystem = \Drupal::service('file_system');
     $image = File::create();
@@ -20,4 +20,12 @@ class EverController {
       ->add($image, 'ever', 'entity', $image->id());
     return $image->uuid();
 }
+  public function getForm() {
+    return \Drupal::formBuilder()->getForm('ever_entity');
+  }
+
+  public function getPosts() {
+    return \Drupal::entityTypeManager()->getStorage('ever_entity')->loadMultiple();
+  }
+
 }

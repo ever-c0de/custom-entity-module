@@ -26,10 +26,19 @@ function ever_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function ever_theme($existing, $type, $theme, $path) {
+function ever_theme() {
   return [
-    'ever' => [
+    'ever_entity_form' => [
       'render element' => 'form',
     ],
   ];
 }
+/**
+ * Implements template_preprocess_HOOK().
+ * Обработчик переменных для первого примера.
+ */
+function template_preprocess_ever(&$variables) {
+  $date_formatter = \Drupal::service('date.formatter');
+  $variables['date'] = $date_formatter->format(time());
+}
+
