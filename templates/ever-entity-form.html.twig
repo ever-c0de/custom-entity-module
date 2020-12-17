@@ -4,8 +4,9 @@
 {{ form.form_id }}
 <div class="form">
   {{ form.system_messages }}
-  <div class="form__inner">
-    <h2>Give your feedback about us!</h2>
+  <div class="form__base">
+    <h2 class="form__base__title">Give your feedback about us!</h2>
+    <div class="form__inner">
     <div class="information__fields">
     <div class="form_name">{{ form.name|e }}</div>
       <div class="form_email">{{ form.email|e }}</div>
@@ -15,11 +16,12 @@
     <div class="upload__fields">
       {{ form.image_avatar }}
       {{ form.image_photo }}
-    </div>
-    <div class="form__submit">
-      {{ form.actions }}
+      <div class="form__submit">
+        {{ form.actions }}
+      </div>
     </div>
   </div>
+</div>
 </div>
 
 

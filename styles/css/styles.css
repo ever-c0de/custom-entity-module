@@ -1,4 +1,4 @@
-.form__inner {
+.form__base {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,3 +6,47 @@
   border: 5px ridge #1995AD;
   padding-bottom: 20px;
 }
+
+.form__base__title {
+  text-align: center;
+  margin: 20px auto 0;
+  padding: 10px;
+  width: fit-content;
+  font-size: 27px !important;
+}
+
+.form__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.information__fields {
+  margin-right: 15px;
+}
+
+.form_name {
+  max-width: 200px;
+}
+.form_email {
+  max-width: 200px;
+}
+.form_telephone {
+  max-width: 200px;
+}
+.form_comment {
+  max-width: 285px;
+}
+#edit-comment-0-value{
+  resize: none;
+  height: 70px;
+}
+.upload__fields {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
