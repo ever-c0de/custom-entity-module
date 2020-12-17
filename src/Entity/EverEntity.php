@@ -129,7 +129,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'hidden',
         'type' => 'string',
         'weight' => 1,
       ])
@@ -169,7 +169,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
-            'label' => 'above',
+            'label' => 'hidden',
             'type' => 'string',
             'weight' => 3,
           ])
@@ -200,7 +200,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDefaultValue('default_image')
           ->setDisplayOptions('view', [
-            'label' => '',
+            'label' => 'hidden',
             'type' => 'image',
             'weight' => 4,
           ])
@@ -223,7 +223,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ])
           ->setDefaultValue('')
           ->setDisplayOptions('view', [
-            'label' => '',
+            'label' => 'hidden',
             'type' => 'image',
             'weight' => 5,
           ])
@@ -239,7 +239,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setLabel(t('Posted on'))
       ->setDescription(t('The time when the post was created.'))
       ->setDisplayOptions('view', [
-        'label' => 'inline',
+        'label' => 'hidden',
         'type' => 'timestamp',
         'settings' => [
           'date_format' => 'custom',
