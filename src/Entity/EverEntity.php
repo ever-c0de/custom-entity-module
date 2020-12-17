@@ -236,8 +236,23 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
           ->setRequired(FALSE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Created'))
-      ->setDescription(t('The time that the entity was created.'));
+      ->setLabel(t('Posted on'))
+      ->setDescription(t('The time when the post was created.'))
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'timestamp',
+        'settings' => [
+          'date_format' => 'custom',
+          'custom_date_format' => 'F/d/Y H:i:s',
+        ],
+        'weight' => 6,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 6,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
 
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))

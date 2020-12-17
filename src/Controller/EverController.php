@@ -3,6 +3,7 @@
 namespace Drupal\ever\Controller;
 
 use Drupal\file\Entity\File;
+use Drupal\views\Views;
 
 class EverController {
 
@@ -20,5 +21,18 @@ class EverController {
       ->add($image, 'ever', 'entity', $image->id());
     return $image->uuid();
 }
+    public function ever_view() {
+    $page = [];
+    $entity_form = \Drupal::entityTypeManager()->getStorage('ever_entity')->create();
+    $page['form'] = \Drupal::service('entity.form_builder')->getForm($entity_form);
+    $view = Views::getView('ever_entity_view');
+    $view->setDisplay('default');
+    $view->preExecute();
+    $view->execute();
+    if (count($view->result)) {
+      $page['posts'] = $view->buildRenderable('default');
+    }
+    return $page;
+    }
 
 }
