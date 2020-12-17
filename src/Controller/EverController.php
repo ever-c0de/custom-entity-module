@@ -29,10 +29,10 @@ class EverController {
     $view->setDisplay('default');
     $view->preExecute();
     $view->execute();
-    if (count($view->result)) {
-      $page['posts'] = $view->buildRenderable('default');
-    }
-    return $page;
+      if (count($view->result)) {
+        $page['posts'] = $view->buildRenderable();
+      }
+      return $page;
     }
 
 }

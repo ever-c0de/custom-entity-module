@@ -30,6 +30,9 @@ function ever_theme() {
   return [
     'ever_entity_form' => [
       'render element' => 'form',
-      ]
+      ],
+    'ever_entity' => [
+      'render element' => 'elements',
+    ],
   ];
 }

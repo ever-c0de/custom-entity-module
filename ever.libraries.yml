@@ -2,4 +2,9 @@ ever_entity_form.css:
   version: 1.x
   css:
     theme:
-      styles/css/styles.css: {}
+      styles/css/form.css: {}
+posts.css:
+  version: 1.x
+  css:
+    theme:
+      styles/css/posts.css: {}
