@@ -1,3 +1,8 @@
-.form {
-  background-color: red;
+.form__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px ridge #1995AD;
+  padding-bottom: 20px;
 }
