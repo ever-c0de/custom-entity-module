@@ -15,7 +15,13 @@ use Symfony\Component\Validator\Constraint;
  */
 class NameConstraint extends Constraint {
 
-  // The message that will be shown if the value is not unique.
-  public $notValid = 'Your name %value is not valid.';
+  /**
+   * Variable for failed validation.
+   *
+   * @var string
+   *  If validation failed returns response.
+   *
+   * public $notValid = 'Your name %value is not valid.';
+   */
 
 }
