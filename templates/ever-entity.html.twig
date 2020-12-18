@@ -1,28 +1,3 @@
-{#
-array (size=20)
-  0 => string '#ever_entity' (length=12)
-  1 => string '#view_mode' (length=10)
-  2 => string '#cache' (length=6)
-  3 => string '#theme' (length=6)
-  4 => string '#weight' (length=7)
-  5 => string '#pre_render' (length=11)
-  6 => string '#printed' (length=8)
-  7 => string '#contextual_links' (length=17)
-  8 => string '#attributes' (length=11)
-  9 => string '#attached' (length=9)
-  10 => string 'name' (length=4)
-  11 => string 'email' (length=5)
-  12 => string 'telephone' (length=9)
-  13 => string 'comment' (length=7)
-  14 => string 'image_avatar' (length=12)
-  15 => string 'image_photo' (length=11)
-  16 => string 'created' (length=7)
-  17 => string '#sorted' (length=7)
-  18 => string '#children' (length=9)
-  19 => string '#render_children' (length=16)
-#}
-{#{{ dump(elements.comment) }}#}
-
 {{ attach_library('ever/posts.css') }}
 <article class="posts__feedback">
   <div class="posts__inner">
@@ -34,7 +9,7 @@ array (size=20)
     </div>
     <div class="content__row">
       <div class="content__text">
-        <div class="user__feedback">{{ elements.comment }}</div>
+        <div class="user__feedback">{{ elements.comment.0 }}</div>
        <div class="user__photo">{{ elements.image_photo }}</div>
       </div>
     </div>
@@ -42,7 +17,7 @@ array (size=20)
   </div>
 </article>
 
-{{ elements }}
+
 
 
 
