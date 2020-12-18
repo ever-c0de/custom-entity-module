@@ -1,18 +1,11 @@
 ever.form:
   path: '/module-page'
   defaults:
-    _controller: '\Drupal\ever\Controller\EverController::ever_view'
+    _controller: '\Drupal\ever\Controller\EverController::fullView'
     _title: 'Ever Module'
   options:
     parameters:
       ever_entity:
         type: ever_entity
-  requirements:
-    _permission: 'access content'
-ever.my:
-  path: '/test'
-  defaults:
-    _controller: '\Drupal\ever\Controller\EverController::ever_view'
-    _title: 'Theme'
   requirements:
     _permission: 'access content'

@@ -14,8 +14,5 @@ use Symfony\Component\Validator\Constraint;
  * )
  */
 class EmailConstraint extends Constraint {
-
-  // The message that will be shown if the value is not an integer.
   public $invalidEmail = 'Your email %value is not valid.';
-
 }

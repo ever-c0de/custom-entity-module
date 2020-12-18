@@ -5,8 +5,13 @@ namespace Drupal\ever\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-
+/**
+ * Provides validate() method for "name" field .
+ *
+ * @package Drupal\ever\Plugin\Validation\Constraint
+ */
 class NameConstraintValidator extends ConstraintValidator {
+
   /**
    * {@inheritdoc}
    */
