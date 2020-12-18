@@ -6,7 +6,13 @@ namespace Drupal\ever\Plugin\Validation\Constraint;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
+/**
+ * Provides validate() method for "email" field .
+ *
+ * @package Drupal\ever\Plugin\Validation\Constraint
+ */
 class EmailConstraintValidator extends ConstraintValidator {
+
   /**
    * {@inheritdoc}
    */
