@@ -109,7 +109,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'hidden',
         'type' => 'string',
         'weight' => 0,
       ])
@@ -129,7 +129,7 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label' => 'hidden',
+        'label' => 'above',
         'type' => 'string',
         'weight' => 1,
       ])

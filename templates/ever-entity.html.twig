@@ -21,20 +21,20 @@ array (size=20)
   18 => string '#children' (length=9)
   19 => string '#render_children' (length=16)
 #}
+{#{{ dump(elements.comment) }}#}
+
 {{ attach_library('ever/posts.css') }}
 <article class="posts__feedback">
   <div class="posts__inner">
     <div class="user__column">
       <div class="user__avatar">{{ elements.image_avatar }}</div>
-      <div class="user__name">{{ elements.name|e }}</div>
-      <div class="user__email">{{ elements.email|e }}</div>
-      <div class="user__tel">{{ elements.telephone|e }}</div>
+      <div class="user__name">{{ elements.name }}</div>
+      <div class="user__email">{{ elements.email }}</div>
+      <div class="user__tel">{{ elements.telephone }}</div>
     </div>
     <div class="content__row">
       <div class="content__text">
-        <div class="user__feedback">
-           {{ elements.comment|e }}
-        </div>
+        <div class="user__feedback">{{ elements.comment }}</div>
        <div class="user__photo">{{ elements.image_photo }}</div>
       </div>
     </div>
@@ -42,7 +42,7 @@ array (size=20)
   </div>
 </article>
 
-
+{{ elements }}
 
 
 

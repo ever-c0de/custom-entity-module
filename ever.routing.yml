@@ -1,7 +1,7 @@
 ever.form:
   path: '/module-page'
   defaults:
-    _controller: '\Drupal\ever\Controller\EverController::ever_view'
+    _controller: '\Drupal\ever\Controller\EverController::fullView'
     _title: 'Ever Module'
   options:
     parameters:
@@ -9,10 +9,10 @@ ever.form:
         type: ever_entity
   requirements:
     _permission: 'access content'
-ever.my:
-  path: '/test'
+ever.admin_edit:
+  path: '/admin/structure/ever_entity/manage/{block}'
   defaults:
-    _controller: '\Drupal\ever\Controller\EverController::ever_view'
-    _title: 'Theme'
+    _entity_form: 'ever_entity.default'
+    _title: 'Configure block'
   requirements:
-    _permission: 'access content'
+    _entity_access: 'block.update'
