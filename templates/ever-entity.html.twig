@@ -16,7 +16,7 @@
 #}
 
 {{ attach_library('ever/posts.css') }}
-<article class="posts__feedback">
+<article{{ attributes.addClass('posts__feedback')}}>
   {{ title_suffix }}
   <div class="posts__inner">
     <div class="user__column">

@@ -5,6 +5,7 @@
  * Contains ever.module.
  */
 
+use Drupal\Core\Render\Element;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -32,7 +33,15 @@ function ever_theme() {
       'render element' => 'form',
       ],
     'ever_entity' => [
-      'render element' => 'content',
+      'render element' => 'elements',
     ],
   ];
+}
+
+function template_preprocess_ever_entity(&$variables) {
+  // Helpful $content variable for templates.
+  $variables['content'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
 }
