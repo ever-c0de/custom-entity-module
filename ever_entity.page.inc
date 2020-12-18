@@ -24,5 +24,10 @@ function template_preprocess_ever_entity(array &$variables) {
 
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
+    $variables['content']['#contextual_links'] = [
+      'ever' => [
+        'route_parameters' => ['ever' => 'ever_entity'],
+      ]
+    ];
   }
 }

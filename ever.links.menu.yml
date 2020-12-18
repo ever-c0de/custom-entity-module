@@ -1,4 +1,3 @@
-
 # Ever entity menu items definition
 entity.ever_entity.collection:
   title: 'Ever entity list'
@@ -6,9 +5,3 @@ entity.ever_entity.collection:
   description: 'List Ever entity entities'
   parent: system.admin_structure
   weight: 100
-
-ever_entity.admin.structure.settings:
-  title: 'Ever entity settings'
-  description: 'Configure Ever entity entities'
-  route_name: ever_entity.settings
-  parent: system.admin_structure

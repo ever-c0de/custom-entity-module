@@ -32,7 +32,7 @@ function ever_theme() {
       'render element' => 'form',
       ],
     'ever_entity' => [
-      'render element' => 'elements',
+      'render element' => 'content',
     ],
   ];
 }

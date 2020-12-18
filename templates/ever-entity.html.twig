@@ -6,7 +6,7 @@
  * This template is used when viewing module-page route.
  *
  * Available variables:
- * - elements: A list of fields with values.
+ * - content: A list of fields with values.
  * - attributes: HTML attributes for the container element.
  *
  * @see template_preprocess_ever_entity()
@@ -14,25 +14,25 @@
  * @ingroup themeable
  */
 #}
+
 {{ attach_library('ever/posts.css') }}
+{{ dump(content) }}
 <article class="posts__feedback">
-  <div{{ attributes }}>
-    {{ dump(title_suffix) }}
-  </div>
+  {{ title_suffix }}
   <div class="posts__inner">
     <div class="user__column">
-      <div class="user__avatar">{{ elements.image_avatar }}</div>
-      <div class="user__name">{{ elements.name }}</div>
-      <div class="user__email">{{ elements.email }}</div>
-      <div class="user__tel">{{ elements.telephone }}</div>
+      <div class="user__avatar">{{ content.image_avatar }}</div>
+      <div class="user__name">{{ content.name }}</div>
+      <div class="user__email">{{ content.email }}</div>
+      <div class="user__tel">{{ content.telephone }}</div>
     </div>
     <div class="content__row">
       <div class="content__text">
-        <div class="user__feedback">{{ elements.comment.0 }}</div>
-       <div class="user__photo">{{ elements.image_photo }}</div>
+        <div class="user__feedback">{{ content.comment.0 }}</div>
+       <div class="user__photo">{{ content.image_photo }}</div>
       </div>
     </div>
-    <div class="timestamp">{{ elements.created }}</div>
+    <div class="timestamp">{{ content.created }}</div>
   </div>
 </article>
 

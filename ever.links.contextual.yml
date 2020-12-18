@@ -1,5 +1,4 @@
-ever_configure:
+ever_entity_configure:
   title: 'Configure entity'
   route_name: 'entity.ever_entity.edit_form'
-  group: 'ever'
-
+  group: 'ever_entity'

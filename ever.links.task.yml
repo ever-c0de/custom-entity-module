@@ -1,9 +1,4 @@
 # Ever entity routing definition
-ever_entity.settings_tab:
-  route_name: ever_entity.settings
-  title: 'Settings'
-  base_route: ever_entity.settings
-
 entity.ever_entity.canonical:
   route_name: entity.ever_entity.canonical
   base_route: entity.ever_entity.canonical
