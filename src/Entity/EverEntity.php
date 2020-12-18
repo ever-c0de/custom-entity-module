@@ -2,6 +2,7 @@
 
 namespace Drupal\ever\Entity;
 
+use Drupal\Core\Entity\Annotation\ContentEntityType;
 use Drupal\ever\Controller\EverController;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
@@ -90,6 +91,9 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \Drupal\Core\Entity\Exception\UnsupportedEntityTypeDefinitionException|
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
 
@@ -162,78 +166,78 @@ class EverEntity extends ContentEntityBase implements EverEntityInterface {
       ->setRequired(TRUE);
 
     $fields['comment'] = BaseFieldDefinition::create('string_long')
-          ->setLabel(t('Comment'))
-          ->setDescription(t('Your comment needs to be not longer than 500 characters.'))
-          ->setSettings([
-            'max_length' => 500,
-          ])
-          ->setDefaultValue('')
-          ->setDisplayOptions('view', [
-            'label' => 'hidden',
-            'type' => 'string',
-            'weight' => 3,
-          ])
-          ->setDisplayOptions('form', [
-            'type' => 'string_textfield',
-            'weight' => 3,
-          ])
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(TRUE);
+      ->setLabel(t('Comment'))
+      ->setDescription(t('Your comment needs to be not longer than 500 characters.'))
+      ->setSettings([
+        'max_length' => 500,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => 3,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => 3,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
 
 
     $fields['image_avatar'] = BaseFieldDefinition::create('image')
-          ->setLabel(t('Avatar'))
-          ->setDescription(t('Allowed extensions: png jpg jpeg'))
-          ->setSettings([
-            'file_directory' => 'ever/avatars',
-            'file_extensions' => 'png jpg jpeg',
-            'alt_field' => 0,
-            'alt_field_required' => 0,
-            'default_image' => [
-              'uuid' => EverController::getDefaultImage(),
-              'alt' => 'Default image',
-              'title' => 'Default image',
-              'width' => NULL,
-              'height' => NULL,
-            ],
-          ])
-          ->setDefaultValue('default_image')
-          ->setDisplayOptions('view', [
-            'label' => 'hidden',
-            'type' => 'image',
-            'weight' => 4,
-          ])
-          ->setDisplayOptions('form', [
-            'type' => 'image_image',
-            'weight' => 4,
-          ])
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(FALSE);
+      ->setLabel(t('Avatar'))
+      ->setDescription(t('Allowed extensions: png jpg jpeg'))
+      ->setSettings([
+        'file_directory' => 'ever/avatars',
+        'file_extensions' => 'png jpg jpeg',
+        'alt_field' => 0,
+        'alt_field_required' => 0,
+        'default_image' => [
+          'uuid' => EverController::getDefaultImage(),
+          'alt' => 'Default image',
+          'title' => 'Default image',
+          'width' => NULL,
+          'height' => NULL,
+        ],
+      ])
+      ->setDefaultValue('default_image')
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'image',
+        'weight' => 4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'image_image',
+        'weight' => 4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(FALSE);
 
     $fields['image_photo'] = BaseFieldDefinition::create('image')
-          ->setLabel(t('Photo'))
-          ->setDescription(t('Allowed extensions: png jpg jpeg'))
-          ->setSettings([
-            'file_directory' => 'ever/photos',
-            'file_extensions' => 'png jpg jpeg',
-            'alt_field' => 0,
-            'alt_field_required' => 0,
-          ])
-          ->setDefaultValue('')
-          ->setDisplayOptions('view', [
-            'label' => 'hidden',
-            'type' => 'image',
-            'weight' => 5,
-          ])
-          ->setDisplayOptions('form', [
-            'type' => 'image_image',
-            'weight' => 5,
-          ])
-          ->setDisplayConfigurable('form', TRUE)
-          ->setDisplayConfigurable('view', TRUE)
-          ->setRequired(FALSE);
+      ->setLabel(t('Photo'))
+      ->setDescription(t('Allowed extensions: png jpg jpeg'))
+      ->setSettings([
+        'file_directory' => 'ever/photos',
+        'file_extensions' => 'png jpg jpeg',
+        'alt_field' => 0,
+        'alt_field_required' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'image',
+        'weight' => 5,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'image_image',
+        'weight' => 5,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(FALSE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Posted on'))

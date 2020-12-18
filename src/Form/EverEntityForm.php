@@ -39,7 +39,7 @@ class EverEntityForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var \Drupal\ever\Entity\EverEntity $entity */
+    /** @var \Drupal\ever\Entity\EverEntity $entity */
     $form = parent::buildForm($form, $form_state);
     $form['actions']['submit']['#value'] = $this->t('Submit');
     $form['actions']['submit']['#ajax'] = [
@@ -57,6 +57,18 @@ class EverEntityForm extends ContentEntityForm {
     return $form;
   }
 
+  /**
+   * Method implements ajaxSubmitCallback for ajax validation of form.
+   *
+   * @param array $form
+   *   Gets the entity_ever &$form.
+   *
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   Gets the $form_state of form.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   Return AjaxResponse.
+   */
   public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
     $errors = $form_state->getErrors();
     $ajax_response = new AjaxResponse();
