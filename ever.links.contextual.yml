@@ -2,3 +2,7 @@ ever_entity_configure:
   title: 'Configure entity'
   route_name: 'entity.ever_entity.edit_form'
   group: 'ever_entity'
+ever_entity_delete:
+  title: 'Delete entity'
+  route_name: 'entity.ever_entity.delete_form'
+  group: 'ever_entity'

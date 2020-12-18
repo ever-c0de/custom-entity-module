@@ -12,5 +12,5 @@ entity.ever_entity.edit_form:
 entity.ever_entity.delete_form:
   route_name:  entity.ever_entity.delete_form
   base_route:  entity.ever_entity.canonical
-  title: Delete
+  title: 'Delete'
   weight: 10
