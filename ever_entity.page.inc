@@ -20,10 +20,8 @@ use Drupal\Core\Render\Element;
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_ever_entity(array &$variables) {
-  // Fetch EverEntity Entity Object.
   $ever_entity = $variables['elements']['#ever_entity'];
 
-  // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }

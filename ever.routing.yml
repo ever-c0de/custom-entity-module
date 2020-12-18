@@ -10,9 +10,9 @@ ever.form:
   requirements:
     _permission: 'access content'
 ever.admin_edit:
-  path: '/admin/structure/ever_entity/manage/{block}'
+  path: '/admin/structure/ever_entity/manage/{ever}'
   defaults:
     _entity_form: 'ever_entity.default'
     _title: 'Configure block'
   requirements:
-    _entity_access: 'block.update'
+    _entity_access: 'ever.update'

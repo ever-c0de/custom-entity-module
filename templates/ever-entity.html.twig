@@ -16,6 +16,9 @@
 #}
 {{ attach_library('ever/posts.css') }}
 <article class="posts__feedback">
+  <div{{ attributes }}>
+    {{ title_suffix }}
+  </div>
   <div class="posts__inner">
     <div class="user__column">
       <div class="user__avatar">{{ elements.image_avatar }}</div>

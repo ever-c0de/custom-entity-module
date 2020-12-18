@@ -14,14 +14,5 @@ use Symfony\Component\Validator\Constraint;
  * )
  */
 class EmailConstraint extends Constraint {
-
-  /**
-   * Variable for failed validation.
-   *
-   * @var string
-   *  If validation failed returns response.
-   *
-   * public $invalidEmail = 'Your email %value is not valid.';
-   */
-
+  public $invalidEmail = 'Your email %value is not valid.';
 }

@@ -14,14 +14,5 @@ use Symfony\Component\Validator\Constraint;
  * )
  */
 class NameConstraint extends Constraint {
-
-  /**
-   * Variable for failed validation.
-   *
-   * @var string
-   *  If validation failed returns response.
-   *
-   * public $notValid = 'Your name %value is not valid.';
-   */
-
+public $notValid = 'Your name %value is not valid.';
 }

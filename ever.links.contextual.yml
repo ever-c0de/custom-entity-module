@@ -1,5 +1,5 @@
 ever_configure:
-  title: 'Configure block'
-  route_name: 'entity.ever_entity.edit_form'
+  title: 'Configure entity'
+  route_name: 'ever.admin_edit'
   group: 'ever'
 
