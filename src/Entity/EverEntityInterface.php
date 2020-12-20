@@ -14,10 +14,6 @@ use Drupal\Core\Entity\EntityPublishedInterface;
 interface EverEntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityPublishedInterface {
 
   /**
-   * Add get/set methods for your configuration properties here.
-   */
-
-  /**
    * Gets the Ever entity name.
    *
    * @return string
